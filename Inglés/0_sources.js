@@ -2,131 +2,135 @@
 /// SOURCES ///
 ///////////////
 
-// Estos son elementos o objetos iniciales
+// These are the initial elements or object that you can generate in Hydra.
 
-//Cada source se ejecuta con una salida .out(), en los siguientes ejemplos se estará utilizando la salida por default. Para más información sobre otras salidas pueden revisar el archivo: "5_salidas.js"
+// Each source-syntax is executed adding an output .out(), the following examples are using the default output. More información about other outputs can be checked in file: "5_outputs.js".
 
-//Para ejecutar una línea de código presiona shift-Enter
-//Para ejecutar un bloque de código presiona ctrl+Enter
+//To run a line of code press shift-Enter
+//To run a block of code press ctrl+Enter
 
 
-//////////
-// Sólidos
-//Sintaxis: solid(rojo, verde, azul, alpha)
-//Cada parámetro va de 0 (sin color) a 1 (máxima capacidad de color)
+/////////
+// Solids
+//Syxtax: solid(red, green, blue, alpha)
+//Each parameter goes from 0 (no color) to 1 (full color)
 
 solid().out()
-//Sólido con parámetros por defecto: (rojo=0, verde:0, azul:0, alpha:1) = negro
+//Solid with default parameters (0,0,0,1) = black
 
-//En el entorno digital, la composición de color se puede realizar a través de diferentes modelos.
-//Los parámetros para crear sólidos en Hydra son a partir del modelo RGB que toma los colores primarios modificando la intensidad a través de los tres canales, añadiendo un cuarto canal: RGBA = "alpha", que modifica la opacidad o transparencia.
+//In the digital environment, colour composition can be made through different colour models.
+//Parameters for solids in Hydra are produced using the RGB model, using/mixing the primary colour and modifying their intensity through three channels, adding a fourth one: RGBA = "alpha", that modifies the opacity or transparency.
 
-//Ejemplos:
-solid(1).out() // Sólido rojo
-solid(0,1).out() // Sólido verde
-solid(0,0,1).out() // Sólido azul
-solid(1,1,1).out() // Sólido blanco
-solid(0.3,0,0.5).out() // Sólido morado
-solid(0.5,0.5,0.9,0.5).out() // Sólido con opacidad al 50%
+//Examples:
+solid(1).out() // Red solid
+solid(0,1).out() // Green solid
+solid(0,0,1).out() // Blue solid
+solid(1,1,1).out() // White solid
+solid(0.3,0,0.5).out() // Purple solid
+solid(0.5,0.5,0.9,0.5).out() // Solid with a 50% opacity
 
-//Los parámetros pueden también ser listas [], esto resultará en un tipo de modulación discreta (con saltos ya que no pasa por números intermedios).
+//These parameters can be integers (int), decimals (doubles), and lists []. This last produces a kind of discrete modulation (with jumps between numbers).
 
-solid([0.4,0.5,0.0,1.0],0.0,0.0).out() // Sólido con modulaciones en el canal rojo
-solid([0.4,0.5],[0.0, 0.5],[0.1, 0.2]).out() //Sólido con modulaciones en los canales RGB
+solid([0.4,0.5,0.0,1.0],0.0,0.0).out() // Solid with modulation in R channel
+solid([0.4,0.5],[0.0, 0.5],[0.1, 0.2]).out() // Solid with modulations in RGB channels
 
-//Se pueden hacer modulaciones continuas utilizando otras funciones y parámetros. Esto se puede ver en los archivos: "3_moduladores.js" y "4_parametros"
+//More information about other parameters that can be used are on files: "3_moduladores.js" & "4_parametros".
 
 
 /////////////
-// Gradientes
-//Sintaxis: gradient(velocidad)
+// Gradients
+//Syntax: gradient(speed)
 
 gradient().out()
-//Gradiente con parámetros por defecto: (velocidad=0.0)
+//Gradient with default parameters (0)
 
-//La velocidad modifica la rapidez de cambio de la posición de colores dentro del círculo cromático
+//Speed modifies the amount of velocity to change the position within the colour wheel = it varies the colours of the gradient.
 
-//Ejemplos
-gradient(1).out() // Velocidad de cambio relativamente lenta
-gradient(40).out() // Velocidad de cambio rápida
-gradient([1,2,0.5]).out() // Modulación de la velocidad de cambio
+//Examples
+gradient(1).out() // With a relatively slow speed of change
+gradient(40).out() // With a fast speed of change
+gradient([1,2,0.5]).out() // With a modulation in the speed
 
 
 ///////////////////////
-// Osciladores de color
-//Sintaxis: osc(frecuencia, sincronización, impresionDeColor)
+// Colour oscillators
+//Syntax: osc(fequency, sync, offsetColor)
 
 osc().out()
-//Oscilador con parámetros por defecto: (frecuencia=60.0, sincronización=0.1, impresionDeColor=0.0)
+//Oscillator with default parameters: (60,0.1,0)
 
-//Los osciladores generan señales (en este caso de color) oscilantes y periódicas. La modulación de frecuencia produce variaciones en las oscilaciones visibles: entre más alta, más oscilaciones
+//Oscillators generate periodic (in this case: colour) signals. Changing the frecuency produces variations en the visible oscillations (a kind of gradient-line effect): higher values produce more oscillators.
 
 osc(2).out()
 osc(40).out()
 osc(400).out()
 
-//El segundo parámetro (sincronización) corresponde a la velocidad de las oscilaciones
+// The second parameter (sync) correspond to the speed in which the oscillators run.
 
-osc(40,0).out() // Sin movimiento
-osc(40,0.3).out() // Los número arriba del 0 aceleran las frecuencias visibles
+osc(40,0).out() // No movement
+osc(40,0.3).out() // Higher number speed the visible oscillations
 
-//Ejemplos
-osc(40,0.1,0.5).out() // Oscilador con el tercer parámetro(colorRGB)
-osc(40,0.1,[2.0,0.5,1.0]).out() // Modulación del canal de color utilizando listas
-osc([4,100],[0.1,0.5],[2.0,0.5,1.0]).out() // Modulación de todos los parámetros
+//Example
+osc(40,0.1,0.5).out() // Oscillator changing the colour
+osc(40,0.1,[2.0,0.5,1.0]).out() // Modulating the offsetColor with lists
+osc([4,100],[0.1,0.5],[2.0,0.5,1.0]).out() // Modulating all paratemeters
 
 
 ////////
 // Noise
-//Sintaxis: noise(escala, velocidad)
+//Syntax: noise(scale, speed)
 
-noise().out() // Noise con parámetros por defecto (escala=10.0, impresionDeColor=0.1)
-//Noise genera una textura similar al Ruido Perlin (o la estática generada en los televisores)
+noise().out() // Noise con parámetros por defecto (10,0.1)
+// Noise generates a similar texture to Perlin noise (or the visible static generated on televisions).
 
-//El primer parámetro (escala) modifica el tamaño de los gradientes (formas) generados. En parametros chicos, la escala es mayor; parámetros grandes, la escala es menor.
+// The first parameter (scale), modifies the size of the gradient (shapes) generated. Using lower parameters will produce bigger scales; higher parameters will produce smaller scales.
 
 noise(2).out()
 noise(100).out()
 
-//Ejemplos
-noise(2,4).out() // Noise con un parámetro de velocidad mayor
-noise([5.5, 10, 20.7],2).out() // Noise con modulación en la escala
-noise([5.5, 10, 20.7],[2,0,4]).out() //Noise con modulación en ambos parámetros
+//Examples
+noise(2,4).out() // Noise with a higher speed
+noise([5.5, 10, 20.7],2).out() // Noise with a modulation in scale
+noise([5.5, 10, 20.7],[2,0,4]).out() //Noie modulating all parameters
 
 
 //////////
 // Voronoi
-//Sintaxis: voronoi(escala, velocidad, combinación)
+//Syntax: voronoi(scale, speed, blending)
 
 voronoi().out()
-//Voronoi con parámetros por defecto: (escala=5.0, velocidad=0.3, combinación=0.3)
-//Vornoi genera una textura a partir de contrucciones geométricas llamadas Polígonos de Thiessen (Voronoi diagram)
+//Voronoi with default parameters: (5,0.3,0.3)
+//Vornoi generates a texture that partition the space using geometric constructions, this method is called Voroni diagram.
 
-//El tercer parámetro corresponde a la forma en que las construcciones geométricas se combinan, parámetros grandes generan un tipo de espacios negativos (en negro) que deforma los polígonos. Número negativos crean un espacio positivo (en blanco)
+//The third parameter (blending) corresponds to the way the geometric constructions combine to each other. Higher values generate a king of negative spaces (in black) that deform the poligons. Negative values generate positive spaces (in white) between them.
 
-voronoi(5,0.3,2).out() // Voronoi con espacios negativos entre polígonos
-voronoi(5,0.3,-2).out() // Voronoi con espacios positivos entre polígonos
+voronoi(5,0.3,2).out() // Voronoi with negative spaces
+voronoi(5,0.3,-2).out() // Voronoi with positive spaces
 
-//Ejemplos
-voronoi(3).out() // Voronoi a una escala grande
-voronoi(30,40).out() // Voronoi a una escala pequeña con una velocidad rápida
-voronoi(1,0.3,2).out() // Voronoi con una escala mayor entre espacios negativos
-voronoi(100,5,-1).out() // Voronoi con una escala pequela entre espacios positivos a una velocidad mediana
-voronoi([1,10,100],0.3).out() // Voronoi con modulación en la escala
-voronoi([4,30,70,10],[0.1,3],[-1,1,-2]).out() // Voronoi con modulación en todos los parámetros
+//Examples
+voronoi(3).out() // Voronoi with a higher scale
+voronoi(30,40).out() // Voronoi with a smaller scale moving fast
+voronoi(1,0.3,2).out() // Voronoi with a higher scale and negative space between poligons
+voronoi(100,5,-1).out() // Voronoi with a smaller scale, negative space between poligons, moving in a medium speed
+voronoi([1,10,100],0.3).out() // Voronoi with a modulation in the scale
+voronoi([4,30,70,10],[0.1,3],[-1,1,-2]).out() // Voronoi with modulations in all parameters
 
 
 /////////
 // Shapes
-//Sintaxis: shape(lados, radio, difuminado)
+//Syntax: shape(sides, radius, smoothing)
 
 shape().out()
-//Forma con parámetros por defecto: (lados=3.0, tamaño=0.3, difuminado=0.01)
-//Shape se utiliza para generar un poígono, modificando los tres parámetros para generar formas más complejas
+//Forma con parámetros por defecto: (3,0.3,0.01)
+//Shape is used to generate a poligon, it can create more complex shapes by modifying the three available parameters.
 
-//ejemplos
-shape(5).out() // Pentagono
-shape(8,0.9).out() // Octágono con un tamaño grande
-shape(4,0.5,0.1).out() // Rectángulo con límites difuminados
-shape(3,[0.1,0.2,0.3,0.4]).out() // Triángulo con modulación en el tamaño
-shape([3,4,5],[0.1,0.5,0.2],[0.5,0.2]).out() // Diferentes formas que están siendo moduladas en los tres parámetros
+//Examples
+shape(5).out() // Pentagon
+shape(8,0.9).out() // Octagon with a higher size
+shape(4,0.5,0.1).out() // Rectangle with difuminated limits
+shape(3,[0.1,0.2,0.3,0.4]).out() // Triangle with a modulation in its size
+shape([3,4,5],[0.1,0.5,0.2],[0.5,0.2]).out() // Different forms appear because there is modulation in all parameters
+
+
+
+/////////////////
