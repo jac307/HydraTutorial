@@ -2,7 +2,7 @@
 /// SOURCES ///
 ///////////////
 
-// Estos son elementos o objetos iniciales que puedes generar en Hydra.
+//Estos son elementos o objetos iniciales que puedes generar en Hydra.
 
 //Cada sintaxis de source se ejecuta añadiendo una salida .out(), en los siguientes ejemplos se estará utilizando la salida por defecto. Más información sobre otras salidas pueden revisar el archivo: "5_salidas.js".
 
