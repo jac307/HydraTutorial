@@ -1,50 +1,65 @@
 
 data Source =
-  -- Parameters
   Constant Double |
   [Double] |
   Fast [Double] |
-  -- () => mouse.x
-  -- () => mouse.y
-  -- ({time}) => time%360
-  -- ({time}) => Math.sin(time)
-
-  -- Sources
-  Osc Source [Double] [Double] [Double] |
-  Solid Source [Double] [Double] [Double] [Double] |
-  Gradient [Double] |
-  Noise [Double] [Double] |
-  Shape [Double] [Double] [Double] |
-  Voronoi [Double] [Double] [Double] |
+  Speed [Source] |
+  Bpm [Source] |
+  Src Output |
+  Osc Source [Source] [Source] [Source] |
+  Solid Source [Source] [Source] [Source] [Source] |
+  Gradient [Source] |
+  Noise [Source] [Source] |
+  Shape [Source] [Source] [Source] |
+  Voronoi [Source] [Source] [Source] |
   Scr Source |
-  -- Render Int |
-  -- out Int |
+  Brightness Source [Source] |
+  Contrast Source [Source] |
+  Color [Source] [Source] [Source] |
+  Colorama [Source] |
+  Invert [Source] |
+  Luma [Source] [Source] |
+  Posterize [Source] [Source] |
+  Saturate [Source] |
+  Shift [Source] [Source] [Source] [Source] |
+  Thresh [Source] [Source] |
+  Kaleid Source |
+  Pixelate [Source] [Source] |
+  Repeat [Source] [Source] [Source] [Source] |
+  RepeatX [Source] [Source] |
+  RepeatY [Source] [Source] |
+  Rotate [Source] [Source] |
+  Scale [Source] [Source] [Source] |
+  Scroll [Source] [Source] [Source] [Source] |
+  ScrollX [Source] [Source] |
+  ScrollY [Source] [Source] |
+  Scale [Source] |
 
-  Brightness Source [Double] |
-  Contrast Source [Double] |
-  Color [Double] [Double] [Double] |
-  Colorama [Double] |
-  Invert [Double] |
-  Luma [Double] [Double] |
-  Posterize [Double] [Double] |
-  Saturate [Double] |
-  Shift [Double] [Double] [Double] [Double] |
-  Thresh [Double] [Double] |
-  Kaleid Double |
-  Pixelate [Double] [Double] |
-  Repeat [Double] [Double] [Double] [Double] |
-  RepeatX [Double] [Double] |
-  RepeatY [Double] [Double] |
-  Rotate [Double] [Double] |
-  Scale [Double] [Double] [Double] |
-  Scroll [Double] [Double] [Double] [Double] |
-  ScrollX [Double] [Double] |
-  ScrollY [Double] [Double] |
-  Scale [Double]
-
-  Add Source Source [Double] |
-  Mult Source Source [Double] |
-  Blend Source Source [Double] |
+  Add Source Source [Source] |
+  Mult Source Source [Source] |
+  Blend Source Source [Source] |
   Diff Source Source |
   Layer Source Source |
-  Mask Source Source [Double] [Double]
+  Mask Source Source [Source] [Source] |
+
+  Modulate Source [Source] |
+  ModulateHue Source [Source] |
+  ModulateKaleid Source [Source] |
+  ModulatePixelate Source [Source] [Source] |
+  ModulateRepeat Source [Source] [Source] [Source] [Source] |
+  ModulateRepeatX Source [Source] [Source] |
+  ModulateRepeatY Source [Source] [Source] |
+  ModulateRotate Source [Source] [Source] |
+  ModulateScale Source [Source] [Source] |
+  ModulateScrollX Source [Source] [Source] |
+  ModulateScrollY Source [Source] [Source]
+
+data Output =
+  O0 |
+  O1 |
+  O2 |
+  O3
+
+data Statement =
+  Out Source Output |
+  Render Output
