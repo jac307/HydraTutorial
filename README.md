@@ -60,9 +60,10 @@ Locally: <br/>
 
 [Hydra Examples - Olivia Jack](https://github.com/ojack/hydra-examples) <br/>
 [Funciones/Functions - Olivia Jack](https://github.com/ojack/hydra/blob/master/docs/funcs.md) <br/>
-[Hydra Book - Naoto Hiéda](https://naotohieda.com/blog/hydra-book/?fbclid=IwAR0x3NfUf4VWcn23jI3Cvk6B7u0eHwVIPUkT_JABWUQH5Wk1ov6uaSlHJRU) <br/>
+[Hydra Book - Naoto Hiéda](https://hydra-book.glitch.me/) <br/>
 [Hydra Facebook Group](https://www.facebook.com/groups/1084288351771117/) <br/>
+[Discord Server](https://discord.com/invite/ZQjfHkNHXC)</br>
 
 ## Colaboradores | Collaborators Information
 
-Jessica A. Rodríguez [méxico] - McMaster University <br/>
+Jessica A. Rodríguez [México] - McMaster University <br/>
