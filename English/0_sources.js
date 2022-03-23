@@ -2,9 +2,15 @@
 /// SOURCES ///
 ///////////////
 
+// Hydra is a set of modules that can be concatenated with each other
+
 // These are the initial elements or object that you can generate in Hydra.
 
 // Each source-syntax is executed adding an output .out(), the following examples are using the default output. More información about other outputs can be checked in file: "5_outputs.js".
+
+//A basic general case for Hydra is: source(parameters).out()
+
+// Sources: solid() gradient() osc() noise() voronoi() shape() y src() 
 
 //To run a line of code press shift-Enter
 //To run a block of code press ctrl+Enter
@@ -81,7 +87,7 @@ osc([4,100],[0.1,0.5],[2.0,0.5,1.0]).out() // Modulating all paratemeters
 //Syntax: noise(scale, speed)
 
 noise().out() // Noise con parámetros por defecto (10,0.1)
-// Noise generates a similar texture to Perlin noise (or the visible static generated on televisions).
+// Noise generates a similar texture to Perlin noise (pseudo-random values, a visible gradient noise)
 
 // The first parameter (scale), modifies the size of the gradient (shapes) generated. Using lower parameters will produce bigger scales; higher parameters will produce smaller scales.
 
@@ -102,7 +108,7 @@ voronoi().out()
 //Voronoi with default parameters: (5,0.3,0.3)
 //Vornoi generates a texture that partition the space using geometric constructions, this method is called Voroni diagram.
 
-//The third parameter (blending) corresponds to the way the geometric constructions combine to each other. Higher values generate a king of negative spaces (in black) that deform the poligons. Negative values generate positive spaces (in white) between them.
+//The third parameter (blending) corresponds to the way the geometric constructions combine to each other. Higher values generate a kind of negative spaces (in black) that deform the poligons. Negative values generate positive spaces (in white) between them.
 
 voronoi(5,0.3,2).out() // Voronoi with negative spaces
 voronoi(5,0.3,-2).out() // Voronoi with positive spaces
@@ -121,7 +127,8 @@ voronoi([4,30,70,10],[0.1,3],[-1,1,-2]).out() // Voronoi with modulations in all
 //Syntax: shape(sides, radius, smoothing)
 
 shape().out()
-//Forma con parámetros por defecto: (3,0.3,0.01)
+// //Shape with default parameters: (3,0.3,0.01)
+ 
 //Shape is used to generate a poligon, it can create more complex shapes by modifying the three available parameters.
 
 //Examples
@@ -131,6 +138,8 @@ shape(4,0.5,0.1).out() // Rectangle with difuminated limits
 shape(3,[0.1,0.2,0.3,0.4]).out() // Triangle with a modulation in its size
 shape([3,4,5],[0.1,0.5,0.2],[0.5,0.2]).out() // Different forms appear because there is modulation in all parameters
 
-
+/////////
+// Src
+//Sintaxis: src( textura )
 
 /////////////////

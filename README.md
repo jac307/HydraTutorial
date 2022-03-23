@@ -2,7 +2,7 @@
 
 ## Información General | General Information
 
-Hydra es una plataforma de live coding para síntesis visual basado en los desarrollos visuales que los sintetizadores análogos generan. Hydra es un proyecto open-source desarrollado por [Olivia Jack](https://ojack.github.io/). <br/>
+Hydra es una plataforma de live coding para síntesis visual basada en los desarrollos visuales que los sintetizadores análogos generan. Hydra es un proyecto open-source desarrollado por [Olivia Jack](https://ojack.github.io/). <br/>
 
 Este es un tutorial en proceso que está abierto a colaboradores. <br/>
 
@@ -60,6 +60,7 @@ Locally: <br/>
 
 [Hydra Examples - Olivia Jack](https://github.com/ojack/hydra-examples) <br/>
 [Funciones/Functions - Olivia Jack](https://github.com/ojack/hydra/blob/master/docs/funcs.md) <br/>
+[Hydra API](https://hydra.ojack.xyz/api)
 [Hydra Book - Naoto Hiéda](https://hydra-book.glitch.me/) <br/>
 [Hydra Facebook Group](https://www.facebook.com/groups/1084288351771117/) <br/>
 [Discord Server](https://discord.com/invite/ZQjfHkNHXC)</br>

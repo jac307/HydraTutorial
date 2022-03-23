@@ -1,13 +1,19 @@
 ///////////////
-/// SOURCES ///
+/// FUENTES ///
 ///////////////
 
-//Estos son elementos o objetos iniciales que puedes generar en Hydra.
+// Hydra es un conjunto de módulos que pueden concatenarse entre sí
 
-//Cada sintaxis de source se ejecuta añadiendo una salida .out(), en los siguientes ejemplos se estará utilizando la salida por defecto. Más información sobre otras salidas pueden revisar el archivo: "5_salidas.js".
+// Las fuentes son elementos o objetos iniciales que puedes generar en Hydra.
 
-//Para ejecutar una línea de código presiona shift-Enter
-//Para ejecutar un bloque de código presiona ctrl+Enter
+// Cualquier fuente en Hydra se ejecuta añadiendo una salida .out(), en los siguientes ejemplos se estará utilizando la salida por defecto. Más información sobre otras salidas pueden revisar el archivo: "5_salidas.js".
+
+// Un caso general básico de uso de Hydra tiene la forma: fuente(parámetros).out()
+
+// Las fuentes que tiene Hydra son: solid() gradient() osc() noise() voronoi() shape() y src() 
+
+// Para ejecutar una línea de código presiona shift-Enter
+// Para ejecutar un bloque de código presiona ctrl+Enter
 
 
 //////////
@@ -81,7 +87,7 @@ osc([4,100],[0.1,0.5],[2.0,0.5,1.0]).out() // Modulación de todos los parámetr
 //Sintaxis: noise(escala, velocidad)
 
 noise().out() // Noise con parámetros por defecto (10,0.1)
-//Noise genera una textura similar al Ruido Perlin (o la estática visible generada en los televisores).
+//Noise genera una textura similar al Ruido Perlin (valores pseudo-aleatorios, un ruido con gradientes visibles ) .
 
 //El primer parámetro (escala) modifica el tamaño de los gradientes (formas) generados. En parametros chicos, la escala es mayor; parámetros grandes, la escala es menor.
 
@@ -131,6 +137,8 @@ shape(4,0.5,0.1).out() // Rectángulo con límites difuminados
 shape(3,[0.1,0.2,0.3,0.4]).out() // Triángulo con modulación en el tamaño
 shape([3,4,5],[0.1,0.5,0.2],[0.5,0.2]).out() // Diferentes formas que están siendo moduladas en los tres parámetros
 
-
+/////////
+// Src
+//Sintaxis: src( textura )
 
 /////////////////
